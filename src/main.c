@@ -68,7 +68,6 @@ static int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
 {
     u_int32_t id = print_pkt(nfa);
     printf("entering callback\n");
-    u_int32_t id = treat_pkt(nfa, &verdict);
     return nfq_set_verdict(qh, id, NF_ACCEPT, 0, NULL);
 }
 

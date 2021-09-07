@@ -19,12 +19,23 @@ OBJECTS = $(SOURCES:.cpp=.o)
 TARGET = firewall_hook
 BUILD_TARGET = $(BUILD_DIR)/$(TARGET)
 
-all: $(TARGET)
+.PHONY: build clean install uninstall _run run
 
-$(TARGET):
+all: build run
+
+build:
 	$(CC) -o $(BUILD_TARGET) $(SOURCES) $(CFLAGS) -lnetfilter_queue
-
-.PHONY: clean
 
 clean:
 	rm -f $(BUILD_TARGET) $(OBJECTS) core
+
+install:
+	sudo iptables -A INPUT -p tcp --dport 80 -j NFQUEUE --queue-num 1
+
+uninstall:
+	-sudo iptables -D INPUT -p tcp --dport 80 -j NFQUEUE --queue-num 1
+
+_run:
+	-sudo ./$(BUILD_TARGET)
+
+run: uninstall install _run
