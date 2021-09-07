@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "defines": [
+            ],
+            "includePath": [
+                "/usr/src/linux-headers-5.11.0-7633-generic/include",
+                "/usr/src/linux-headers-5.11.0-7633-generic/arch/x86/include",
+                "/usr/src/linux-headers-5.11.0-7633-generic/arch/x86/include/generated",
+                "/usr/lib/gcc/x86_64-linux-gnu/10/include",
+                "/usr/src/linux-headers-5.11.0-7633/arch/x86/include",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include"
+            ],
+            "compilerArgs": [
+                "-nostdinc",
+                "-include", "/usr/src/linux-headers-5.11.0-7633-generic/include/linux/kconfig.h",
+                "-include", "/usr/src/linux-headers-5.11.0-7633-generic/include/linux/compiler_types.h"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
