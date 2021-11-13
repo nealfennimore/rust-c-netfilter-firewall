@@ -16,6 +16,11 @@ nc -zv localhost:80
 ## Scripts
 ### Build
 
+#### C
 ```sh
 make
+```
+#### Rust
+```
+make rust
 ```
