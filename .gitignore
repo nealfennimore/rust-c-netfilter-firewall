@@ -2,3 +2,4 @@ build/*
 !build/Makefile
 .vscode/settings.json
 target
+.ipynb_checkpoints
