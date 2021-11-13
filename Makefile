@@ -30,10 +30,10 @@ clean:
 	rm -f $(BUILD_TARGET) $(OBJECTS) core
 
 install:
-	sudo iptables -A INPUT -p tcp --dport 80 -j NFQUEUE --queue-num 1
+	sudo iptables -A OUTPUT -d 127.0.0.1 -p tcp --dport 9999 -j NFQUEUE --queue-num 0
 
 uninstall:
-	-sudo iptables -D INPUT -p tcp --dport 80 -j NFQUEUE --queue-num 1
+	-sudo iptables -D OUTPUT -d 127.0.0.1 -p tcp --dport 9999 -j NFQUEUE --queue-num 0
 
 _run:
 	-sudo ./$(BUILD_TARGET)
