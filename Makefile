@@ -39,3 +39,15 @@ _run:
 	-sudo ./$(BUILD_TARGET)
 
 run: uninstall install _run
+
+rust: build_rust run_rust
+
+_run_rust:
+	-sudo ./target/release/rust_packet_filter
+
+run_rust: uninstall install _run_rust
+
+build_rust:
+	-cargo build --release
+
+run_rust: uninstall install _run_rust
