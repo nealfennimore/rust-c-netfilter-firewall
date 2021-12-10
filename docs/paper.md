@@ -43,7 +43,6 @@ For the experiment I used [ethr](https://github.com/microsoft/ethr) to perform t
 
 ### How was it setup?
 ![State Diagram](https://raw.githubusercontent.com/nealfennimore/rust-c-netfilter-firewall/main/docs/diagram.png)
-```
 
 First, a firewall rule (iptables) is activated that allows TCP packets going to `127.0.0.1` port `9999` to be queued onto a netfilter queue.
 
