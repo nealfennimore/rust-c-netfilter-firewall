@@ -1,4 +1,8 @@
 # Linux Userspace Firewall
+
+[Research Paper](docs/paper.md)
+
+---
 ## Scripts
 ### Build
 
